@@ -1,4 +1,4 @@
-# DeT and DOT
+<!-- # DeT and DOT
 DETtranst 只应用CrossAttention模块，应用depthpretrain-ResNet tensoboard：DETtrans-depth  checkpoint: **DETtranst-depth-pretrain**
 
 DETtanst应用SelfAttention,CrossAttention模块，应用depthpretrain-ResNet   tensorboard: DETtranst-SA-CA-depth checkpoint:DETtranst-SA-CA-depth 
@@ -11,18 +11,25 @@ DETtanst应用SelfAttention,CrossAttention模块，未应用depthpretrain-ResNet
 
 输入是rgb3d, 使用DET预训练参数，search分支和template分支模态融合参数共享，attention维度设置256，融合模块数量设置1，tensorboard/checkpoint: DETtranst-DET-rgb3d-same 
 
-输入是colormap， 使用DET参数，只冻结backbone，融合参数不共享，tensorboard/checkpoint: DETtranst-DET
+输入是colormap， 使用DET参数，只冻结backbone，融合参数不共享，tensorboard/checkpoint: DETtranst-DET -->
 
 
 
 
 
 
-Code and datasets for 
 
-1) "DepthTrack: Unveiling the Power of RGBD Tracking" (ICCV2021)
-2) "Depth-only Object Tracking" (BMVC2021)
 
+
+
+
+### DepthTrack Test set (50 Sequences) 
+[Download](https://doi.org/10.5281/zenodo.5792146)
+
+### DepthTrack Training set (152 Sequences)
+[Download (100 seqs)](https://doi.org/10.5281/zenodo.5794115),  [Download (52 seqs)](https://doi.org/10.5281/zenodo.5837926)
+
+All videoes are 640x360, except 4 sequences in 640x320: painting_indoor_320, pine02_wild_320, toy07_indoor_320, hat02_indoor_320
 ```
 @InProceedings{yan2021det,
     author    = {Yan, Song and Yang, Jinyu and Kapyla, Jani and Zheng, Feng and Leonardis, Ales and Kamarainen, Joni-Kristian},
@@ -41,16 +48,6 @@ Code and datasets for
   organization= {British Machine Vision Association}
 }
 ```
-
-
-### DepthTrack Test set (50 Sequences) 
-[Download](https://doi.org/10.5281/zenodo.5792146)
-
-### DepthTrack Training set (152 Sequences)
-[Download (100 seqs)](https://doi.org/10.5281/zenodo.5794115),  [Download (52 seqs)](https://doi.org/10.5281/zenodo.5837926)
-
-All videoes are 640x360, except 4 sequences in 640x320: painting_indoor_320, pine02_wild_320, toy07_indoor_320, hat02_indoor_320
-
 ### Generated LaSOT Depth Images
 We manually remove bad sequences, and here are totally 646 sequences (some zip files may be broken, will be updated soon) used the **DenseDepth** method. 
 Original DenseDepth outputs are in range [0, 1.0], we multiply 2^16.
