@@ -51,9 +51,9 @@ def run_tracker(tracker_name, tracker_param, run_id=None, dataset_name='cdtb', d
 '''
 def main():
     parser = argparse.ArgumentParser(description='Run tracker on sequence or dataset.')
-    # parser.add_argument('tracker_name', type=str, help='Name of tracking method.')
-    # parser.add_argument('tracker_param', type=str, help='Name of parameter file.')
-    # parser.add_argument('--dataset_name', type=str, default='otb', help='Name of dataset (otb, nfs, uav, tpl, vot, tn, gott, gotv, lasot).')
+    parser.add_argument('tracker_name', type=str, help='Name of tracking method.')
+    parser.add_argument('tracker_param', type=str, help='Name of parameter file.')
+    parser.add_argument('--dataset_name', type=str, default='otb', help='Name of dataset (otb, nfs, uav, tpl, vot, tn, gott, gotv, lasot).')
     # parser.add_argument('--input_dtype', type=str, default='colormap', help='[colormap, raw depth, normalized_depth, ....]')
     parser.add_argument('--sequence', type=str, default=None, help='Sequence number or name.')
     parser.add_argument('--debug', type=int, default=0, help='Debug level.')
@@ -70,7 +70,7 @@ def main():
     except:
         seq_name = args.sequence
 
-    run_tracker('dimp', 'DMT_DiMP50', None, 'depthtrack','rgb3d', seq_name, args.debug,
+    run_tracker(args.tracker_name, args.tracker_param, None, args.dadataset_nametaset,'rgb3d', seq_name, args.debug,
                 args.threads, {'use_visdom': args.use_visdom, 'server': args.visdom_server, 'port': args.visdom_port})
 
 

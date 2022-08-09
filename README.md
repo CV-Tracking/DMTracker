@@ -20,6 +20,26 @@ DETtanst应用SelfAttention,CrossAttention模块，未应用depthpretrain-ResNet
 
 
 
+### Install
+```
+bash install.sh path-to-anaconda DMT
+```
+
+### Train
+Using the default DiMP50 or ATOM pretrained checkpoints can reduce the training time.
+
+For example, move the default dimp50.pth into the checkpoints folder and rename as DiMPNet_Det_EP0050.pth.tar
+
+```
+python run_training.py dimp DMT_DiMP50
+
+```
+
+### Test
+```
+python run_tracker.py dimp DeT_DiMP50_Max --dataset_name depthtrack 
+
+```
 
 
 
@@ -149,18 +169,7 @@ The generated depth maps by using **HighResDepth** will be uploaded soon.
 
 If you find some excellent methods to generate high quality depth images, please share it.
 
-### Architecture
-The settings are same as that of Pytracking, please read the document of Pytracking for details.
 
-Actually the network architecture is very simple, just adding one ResNet50 feature extractor for Depth input and then merging the RGB and Depth feature maps.
-Below figures are
-1) the feature maps for RGB, D inputs and the merged RGBD ones,
-2) the network for RGBD DiMP50, and
-3) RGBD ATOM.
-
-![The feature maps for RGB, D and the merged RGBD](imgs/fig_featuremaps.png)
-![The network for RGB+D DiMP50](imgs/figure_for_RGBD_DiMP50.png)
-![The network for RGB+D ATOM](imgs/figure_for_RGBD_ATOM.png)
 
 
 ### Download
@@ -177,39 +186,3 @@ gdown https://drive.google.com/uc\?id\=15LqCjNelRx-pOXAwVd1xwiQsirmiSLmK -O pytr
 gdown https://drive.google.com/uc\?id\=14wyUaG-pOUu4Y2MPzZZ6_vvtCuxjfYPg -O pytracking/networks/DeT_ATOM_MC.pth
 ```
 
-### Install
-```
-bash install.sh path-to-anaconda DeT
-```
-
-### Train
-Using the default DiMP50 or ATOM pretrained checkpoints can reduce the training time.
-
-For example, move the default dimp50.pth into the checkpoints folder and rename as DiMPNet_Det_EP0050.pth.tar
-
-```
-python run_training.py bbreg DeT_ATOM_Max
-python run_training.py bbreg DeT_ATOM_Mean
-python run_training.py bbreg DeT_ATOM_MC
-
-python run_training.py dimp DeT_DiMP50_Max
-python run_training.py dimp DeT_DiMP50_Mean
-python run_training.py dimp DeT_DiMP50_MC
-```
-
-### Test
-```
-python run_tracker.py atom DeT_ATOM_Max --dataset_name depthtrack --input_dtype rgbcolormap
-python run_tracker.py atom DeT_ATOM_Mean --dataset_name depthtrack --input_dtype rgbcolormap
-python run_tracker.py atom DeT_ATOM_MC --dataset_name depthtrack --input_dtype rgbcolormap
-
-python run_tracker.py dimp DeT_DiMP50_Max --dataset_name depthtrack --input_dtype rgbcolormap
-python run_tracker.py dimp DeT_DiMP50_Mean --dataset_name depthtrack --input_dtype rgbcolormap
-python run_tracker.py dimp DeT_DiMP50_MC --dataset_name depthtrack --input_dtype rgbcolormap
-python run_tracker.py dimp DeT_DiMP50_DO --dataset_name depthtrack --input_dtype colormap
-
-
-python run_tracker.py dimp dimp50 --dataset_name depthtrack --input_dtype color
-python run_tracker.py atom default --dataset_name depthtrack --input_dtype color
-
-```
