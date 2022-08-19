@@ -1,5 +1,5 @@
 ### Architecture
-![The network of DMTracker](imgs/structure3.pdf)
+![The network of DMTracker](./imgs/structure3.png)
 
 ### Install
 ```
@@ -148,14 +148,6 @@ And we also tried the recently [HighResDepth](http://yaksoy.github.io/highresdep
 ### Download
 1) Download the training dataset and edit the path in local.py
 
-2) Download the checkpoints for DeT trackers (in install.sh)
-```
-gdown https://drive.google.com/uc\?id\=1djSx6YIRmuy3WFjt9k9ZfI8q343I7Y75 -O pytracking/networks/DeT_DiMP50_Max.pth
-gdown https://drive.google.com/uc\?id\=1JW3NnmFhX3ZnEaS3naUA05UaxFz6DLFW -O pytracking/networks/DeT_DiMP50_Mean.pth
-gdown https://drive.google.com/uc\?id\=1wcGJc1Xq_7d-y-1nWh6M7RaBC1AixRTu -O pytracking/networks/DeT_DiMP50_MC.pth
-gdown https://drive.google.com/uc\?id\=17IIroLZ0M_ZVuxkGN6pVy4brTpicMrn8 -O pytracking/networks/DeT_DiMP50_DO.pth
-gdown https://drive.google.com/uc\?id\=17aaOiQW-zRCCqPePLQ9u1s466qCtk7Lh -O pytracking/networks/DeT_ATOM_Max.pth
-gdown https://drive.google.com/uc\?id\=15LqCjNelRx-pOXAwVd1xwiQsirmiSLmK -O pytracking/networks/DeT_ATOM_Mean.pth
-gdown https://drive.google.com/uc\?id\=14wyUaG-pOUu4Y2MPzZZ6_vvtCuxjfYPg -O pytracking/networks/DeT_ATOM_MC.pth
-```
+2) Download the checkpoints for DMT trackers. [code:h0n2](https://pan.baidu.com/s/15IzYQn6CbuJDnYx10Ahcug)
+
 
