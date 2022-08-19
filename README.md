@@ -18,7 +18,8 @@ DETtanst应用SelfAttention,CrossAttention模块，未应用depthpretrain-ResNet
 
 
 
-
+### Architecture
+![The network of DMTracker](imgs/structure3.pdf)
 
 ### Install
 ```
@@ -140,9 +141,9 @@ the second and the third are from [DenseDepth](https://github.com/ialhashim/Dens
 the forth row is for the failure cases in which the targets are too close to the background or floor.
 The last row is from DenseDepth for CDTB RGB images.
 
-![Examples of generated depth images](imgs/generated_depth.png)
 
-In our paper, we used the [DenseDepth](https://github.com/ialhashim/DenseDepth) monocular depth estimation method.
+
+In DeT paper, we used the [DenseDepth](https://github.com/ialhashim/DenseDepth) monocular depth estimation method.
 We calculate the Ordinal Error (ORD) on the generated depth for CDTB and our DepthTrack test set, and the mean ORD is about 0.386, which is sufficient for training D or RGBD trackers and we have tested it in our works.
 
 And we also tried the recently [HighResDepth](http://yaksoy.github.io/highresdepth/) from CVPR2021, which also performs very well.
@@ -163,14 +164,6 @@ And we also tried the recently [HighResDepth](http://yaksoy.github.io/highresdep
   year={2021}
 }
 ```
-
-
-The generated depth maps by using **HighResDepth** will be uploaded soon.
-
-If you find some excellent methods to generate high quality depth images, please share it.
-
-
-
 
 ### Download
 1) Download the training dataset and edit the path in local.py
