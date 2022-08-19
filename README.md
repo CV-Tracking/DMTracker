@@ -1,23 +1,3 @@
-<!-- # DeT and DOT
-DETtranst 只应用CrossAttention模块，应用depthpretrain-ResNet tensoboard：DETtrans-depth  checkpoint: **DETtranst-depth-pretrain**
-
-DETtanst应用SelfAttention,CrossAttention模块，应用depthpretrain-ResNet   tensorboard: DETtranst-SA-CA-depth checkpoint:DETtranst-SA-CA-depth 
-
-DETtanst应用SelfAttention,CrossAttention模块，未应用depthpretrain-ResNet  tensorboard: DETtranst-SA-CA checkpoint:DETtranst-SA-CA
-
-将未应用depth-resnet 应用SelfAttention,CrossAttention的dettranst利用depthtrack数据集进行微调： tensorboard : DETtranst-depthtrack-continue checkpoint: DETtranst-depthtrack-continue
-
-
-
-输入是rgb3d, 使用DET预训练参数，search分支和template分支模态融合参数共享，attention维度设置256，融合模块数量设置1，tensorboard/checkpoint: DETtranst-DET-rgb3d-same 
-
-输入是colormap， 使用DET参数，只冻结backbone，融合参数不共享，tensorboard/checkpoint: DETtranst-DET -->
-
-
-
-
-
-
 ### Architecture
 ![The network of DMTracker](imgs/structure3.pdf)
 
