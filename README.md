@@ -38,7 +38,7 @@ python run_training.py dimp DMT_DiMP50
 
 ### Test
 ```
-python run_tracker.py dimp DeT_DiMP50_Max --dataset_name depthtrack 
+python run_tracker.py dimp DMT_DiMP50 --dataset_name depthtrack 
 
 ```
 
